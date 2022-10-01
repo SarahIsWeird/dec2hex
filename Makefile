@@ -16,6 +16,9 @@ dec2hex.o: dec2hex.asm
 $(TARGET): dec2hex.o
 	$(LD) -o $(TARGET) dec2hex.o $(LDFLAGS)
 
+install: $(TARGET)
+	install ./d2h /usr/local/bin
+
 clean:
 	rm dec2hex.o $(TARGET) 2> /dev/null || true
 
